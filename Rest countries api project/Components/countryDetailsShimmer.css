@@ -1,0 +1,39 @@
+/* .shimmerBackDiv{
+    display: flex;
+    justify-content: space-between;
+} */
+
+.flagShimmer {
+  width: 450px;
+  height: 230px;
+  background-color: #ccc;
+}
+
+.h1Shimmer,
+.native-name-shimmer,
+.shimmerBack,
+.population-shimmer,
+.subregion-shimmer,
+.capital-shimmer,
+.capital-shimmer,
+.top-level-domain-shimmer,
+.currencies-shimmer,
+.languages-shimmer,
+.border-countries-simmer {
+  background-color: #ccc;
+  color: #ccc;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.h1Shimmer {
+  width: 50%;
+}
+
+@media (max-width: 452px) {
+  .flagShimmer {
+    width: 80vw;
+    height: 200px;
+    /* padding-right: 30px; */
+  }
+}
