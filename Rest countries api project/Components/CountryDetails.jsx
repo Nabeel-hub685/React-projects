@@ -27,22 +27,18 @@
 //     //     tld: data[0].tld[0],
 //     //     currency: Object.values(data[0].currencies)[0].name,
 //     //     flag: data[0].flags.svg,
-       
 
 //     //   }
 //     // )
-    
+
 //     fetchData();
 
-
-
 //   }, [countryName]);
-
 
 //   async function fetchData(){
 //     let response = await fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`);
 //     let data = await response.json();
-    
+
 //     console.log(data);
 //     console.log(Object.values(data[0].name.nativeName)[0].common);
 //     console.log(Object.values(data[0].currencies)[0].name);
@@ -60,11 +56,10 @@
 //        // borders: ['India', 'China', 'Iran', 'Afghanistan'],
 //         // borders:data[0].borders,
 //          borders: [],
-       
 
 //       }
 //     )
-    
+
 //   if(!countryData.borders){
 //     countryData.borders=[];
 // }
@@ -84,14 +79,11 @@
 //     ...prevState,
 //     borders: [...prevState.borders, borderNames],
 //   }));
- 
-   
+
 // }
 
 // )};
 //  //console.log(borderArray);
-
-
 
 //   }
 
@@ -103,11 +95,10 @@
 //        <CountryDetailsShimmer/>
 //     )
 //   }
-  
-  
+
 //   return (
 //     // countryData && ( // iska mtlb he jab countryData aajae tab hi ye poora render kro
-    
+
 //     <main>
 //       <div className="country-details-container">
 //         <span  className="back-button" onClick={()=>{
@@ -116,12 +107,11 @@
 //           <i className="fa-solid fa-arrow-left"></i>&nbsp; Back
 //         </span>
 //         <span>  </span>
-//         <Link to='http://localhost:1234/'><span  className="back-button home" 
+//         <Link to='http://localhost:1234/'><span  className="back-button home"
 //         >
 //           Back to Home
 //         </span>
 //         </Link>
-
 
 //         <div className="country-details">
 //           <img src={countryData.flag} alt="" />
@@ -140,7 +130,7 @@
 //                 <b>subRegion: </b>
 //                 <span className="subregion">{countryData.subregion}</span>
 //               </p>
-              
+
 //               <p>
 //                 <b>Capital: </b>
 //                 <span className="capital">{countryData.capital}</span>
@@ -161,7 +151,7 @@
 
 //            { Object.values(countryData).length!==0 && countryData.borders && countryData.borders.length!==0 ? (
 //             <div className="border-countries">
-              
+
 //               <b>Border Countries: </b>&nbsp;
 //               {
 //                 Object.values(countryData).length!==0 ?
@@ -170,41 +160,24 @@
 //                 )
 //                 : ''
 //               }
-            
+
 //             </div>) : ''}
-            
+
 //           </div>
 //         </div>
 //       </div>
 //     </main>
-    
+
 //   // )
 //   )
 
 // ;
-  
+
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
-import CountryDetailsShimmer from "./countryDetailsShimmer";
+import CountryDetailsShimmer from "./CountryDetailsShimmer";
 import { themeContext } from "../contexts/ThemeContext";
 
 export default function CountryDetails() {
@@ -213,17 +186,17 @@ export default function CountryDetails() {
   const [countryData, setCountryData] = useState({});
   const [loading, setLoading] = useState(true); // New loading state
 
- // const location = useLocation();    
- // it returns an object with other keys including 'state' key or uski value wahi hoti he jo hamne pichle component k link tag k 'state' attribute me pass ki hoti he!
-//console.log(location);
-///console.log(location.state);
+  // const location = useLocation();
+  // it returns an object with other keys including 'state' key or uski value wahi hoti he jo hamne pichle component k link tag k 'state' attribute me pass ki hoti he!
+  //console.log(location);
+  ///console.log(location.state);
 
-// ham useLocation() ko aese destructure krke bhi use krsakty hen
+  // ham useLocation() ko aese destructure krke bhi use krsakty hen
 
-const {state} = useLocation();
-console.log(state);
+  const { state } = useLocation();
+  console.log(state);
 
-console.log(useContext(themeContext));
+  console.log(useContext(themeContext));
 
   useEffect(() => {
     // Show shimmer effect when country changes
@@ -269,8 +242,7 @@ console.log(useContext(themeContext));
       }
 
       setLoading(false); // Hide shimmer effect after fetching data
-    }
-     catch (error) {
+    } catch (error) {
       console.error("Error fetching country details:", error);
       setLoading(false); // Stop loading in case of error
     }

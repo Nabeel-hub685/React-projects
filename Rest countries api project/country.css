@@ -16,7 +16,6 @@
   position: absolute;
   right: 25px;
   box-shadow: 0 0 4px 0px #0003;
-  top: 97px;
 }
 
 .country-details {
@@ -75,5 +74,11 @@
   .country-details img {
     width: 100%;
     max-width: 400px;
+  }
+}
+
+@media (max-width: 769px) {
+  .home {
+    top: 97px;
   }
 }
