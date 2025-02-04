@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./header";
+// import Header from "./header";
 import { useParams } from "react-router-dom";
 
 export default function Contact() {
