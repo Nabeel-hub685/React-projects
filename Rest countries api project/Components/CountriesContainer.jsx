@@ -29,7 +29,7 @@ export default function CountriesContainer({ query }) {
   //   });
 
   async function fetchData() {
-    let response = await fetch("https://restcountries.com/v3.1/all");
+    let response = await fetch("https://restcountries.com/v3.1/all?fields=name,flags,capital,population,region");
     let data = await response.json(); // response.json() se pehly bhi await likhna boht zroori he!
     //CountriesData = data;
     setCountriesData(data);
